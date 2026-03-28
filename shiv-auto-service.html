@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shiv Auto Service – Tracy, CA</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0e0e0e;
+    --white: #f5f2ec;
+    --red: #c8311a;
+    --red-dark: #9e2212;
+    --gold: #d4a843;
+    --gray: #2a2a2a;
+    --mid: #6b6b6b;
+    --light: #e8e4dc;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 6vw 8vh;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('data:image/jpeg;base64,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');
+    background-size: cover;
+    background-position: center;
+  }
+  .hero-bg::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(10,10,10,0.92) 0%, rgba(10,10,10,0.5) 50%, rgba(10,10,10,0.2) 100%);
+  }
+
+  .hero-badge {
+    position: absolute;
+    top: 5vh; right: 6vw;
+    background: var(--red);
+    color: #fff;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    letter-spacing: 0.12em;
+    padding: 0.55em 1.2em;
+    border-radius: 2px;
+    animation: fadeDown 0.8s 0.6s both;
+  }
+
+  .hero-eyebrow {
+    font-size: clamp(0.7rem, 1.2vw, 0.9rem);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+    animation: fadeUp 0.8s 0.2s both;
+  }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4rem, 13vw, 11rem);
+    line-height: 0.88;
+    letter-spacing: -0.01em;
+    animation: fadeUp 0.9s 0.3s both;
+  }
+
+  .hero-title span { color: var(--red); }
+
+  .hero-sub {
+    margin-top: 2rem;
+    font-size: clamp(0.9rem, 1.4vw, 1.1rem);
+    color: rgba(245,242,236,0.55);
+    max-width: 420px;
+    line-height: 1.7;
+    animation: fadeUp 0.9s 0.45s both;
+  }
+
+  .hero-actions {
+    margin-top: 2.4rem;
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    animation: fadeUp 0.9s 0.55s both;
+  }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5em;
+    padding: 0.75em 1.8em;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.2s;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary { background: var(--red); color: #fff; }
+  .btn-primary:hover { background: var(--red-dark); transform: translateY(-2px); }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--white);
+    border: 1px solid rgba(245,242,236,0.25);
+  }
+  .btn-ghost:hover { border-color: var(--white); transform: translateY(-2px); }
+
+  /* ── RATING STRIP ── */
+  .rating-strip {
+    background: var(--gray);
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    padding: 1.8rem 6vw;
+    display: flex; align-items: center; gap: 3rem; flex-wrap: wrap;
+  }
+
+  .rating-big {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .stars { display: flex; gap: 3px; }
+  .star { color: var(--gold); font-size: 1.2rem; }
+  .star.half { opacity: 0.4; }
+
+  .rating-text { font-size: 0.8rem; color: var(--mid); margin-top: 0.2rem; letter-spacing: 0.05em; }
+
+  .rating-divider { width: 1px; height: 3rem; background: rgba(255,255,255,0.12); }
+
+  .info-item { display: flex; flex-direction: column; gap: 0.2rem; }
+  .info-label { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--mid); }
+  .info-value { font-size: 1rem; font-weight: 400; color: var(--white); }
+  .info-value a { color: var(--white); text-decoration: none; }
+  .info-value a:hover { color: var(--gold); }
+  .open-badge { color: #4caf7d; font-weight: 500; }
+
+  /* ── SECTION COMMON ── */
+  section { padding: 7rem 6vw; }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ── ABOUT ── */
+  .about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .about { grid-template-columns: 1fr; gap: 3rem; }
+  }
+
+  .about-body { font-size: 1.05rem; line-height: 1.85; color: rgba(245,242,236,0.7); }
+  .about-body p + p { margin-top: 1.2rem; }
+
+  .about-visual {
+    position: relative;
+    aspect-ratio: 1;
+    max-width: 420px;
+  }
+
+  .about-card {
+    position: absolute; inset: 0;
+    background: var(--gray);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2.5rem;
+  }
+
+  .wrench-icon { font-size: 4rem; opacity: 0.15; }
+
+  .about-card-accent {
+    position: absolute;
+    top: -1.5rem; right: -1.5rem;
+    width: 5rem; height: 5rem;
+    background: var(--red);
+    border-radius: 2px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    text-align: center;
+    line-height: 1.3;
+    padding: 0.5rem;
+  }
+
+  .stat-row {
+    display: flex; gap: 2rem; margin-top: 2.5rem;
+  }
+
+  .stat { text-align: center; }
+  .stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat-desc { font-size: 0.75rem; color: var(--mid); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.3rem; }
+
+  /* ── REVIEWS ── */
+  .reviews-section { background: #111; }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .review-card {
+    background: var(--gray);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 4px;
+    padding: 2rem;
+    position: relative;
+    transition: transform 0.2s, border-color 0.2s;
+  }
+
+  .review-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(200,49,26,0.35);
+  }
+
+  .review-quote {
+    font-size: 3rem;
+    font-family: 'Bebas Neue', sans-serif;
+    color: var(--red);
+    opacity: 0.35;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .review-text {
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: rgba(245,242,236,0.75);
+    margin-bottom: 1.5rem;
+  }
+
+  .reviewer {
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+
+  .reviewer-avatar {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    background: var(--red);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .reviewer-name { font-weight: 500; font-size: 0.9rem; }
+  .reviewer-meta { font-size: 0.75rem; color: var(--mid); }
+
+  .review-stars { display: flex; gap: 2px; margin-bottom: 1rem; }
+  .review-star { color: var(--gold); font-size: 0.9rem; }
+
+  /* ── HIGHLIGHTS ── */
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1px;
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 3rem;
+  }
+
+  .highlight {
+    background: var(--gray);
+    padding: 2.5rem 2rem;
+    transition: background 0.2s;
+  }
+
+  .highlight:hover { background: #333; }
+
+  .highlight-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .highlight-title { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.05em; margin-bottom: 0.5rem; }
+  .highlight-desc { font-size: 0.85rem; color: rgba(245,242,236,0.55); line-height: 1.6; }
+
+  /* ── CONTACT ── */
+  .contact-section {
+    background: var(--red);
+    color: #fff;
+  }
+
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  @media (max-width: 768px) {
+    .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+  }
+
+  .contact-section .section-label { color: rgba(255,255,255,0.6); }
+  .contact-section .section-title { color: #fff; }
+
+  .contact-detail {
+    display: flex; gap: 1rem; align-items: flex-start;
+    margin-bottom: 2rem;
+  }
+
+  .contact-detail-icon {
+    width: 40px; height: 40px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 2px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .contact-detail-label { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.6; }
+  .contact-detail-value { font-size: 1rem; font-weight: 400; margin-top: 0.2rem; }
+  .contact-detail-value a { color: #fff; text-decoration: none; }
+  .contact-detail-value a:hover { text-decoration: underline; }
+
+  .map-embed {
+    border-radius: 4px;
+    overflow: hidden;
+    border: 2px solid rgba(255,255,255,0.2);
+    height: 300px;
+  }
+
+  .map-embed iframe { width: 100%; height: 100%; border: none; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #080808;
+    padding: 2.5rem 6vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .footer-brand { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; letter-spacing: 0.08em; }
+  .footer-brand span { color: var(--red); }
+  .footer-copy { font-size: 0.8rem; color: var(--mid); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s, transform 0.7s;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-badge">Tracy, CA</div>
+  <p class="hero-eyebrow">Trusted Auto Repair · Est. Tracy</p>
+  <h1 class="hero-title">Shiv<br><span>Auto</span><br>Service</h1>
+  <p class="hero-sub">Expert diagnostics, honest pricing, and repairs done right — the first time. Your neighborhood mechanic, a cut above the rest.</p>
+  <div class="hero-actions">
+    <a href="tel:4089913358" class="btn btn-primary">📞 Call Now</a>
+    <a href="https://maps.google.com/?q=5736+W+Grant+Line+Rd+Tracy+CA+95304" target="_blank" class="btn btn-ghost">📍 Get Directions</a>
+  </div>
+</section>
+
+<!-- RATING STRIP -->
+<div class="rating-strip">
+  <div>
+    <div class="rating-big">4.8</div>
+    <div class="stars">
+      <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+    </div>
+    <div class="rating-text">68 Google Reviews</div>
+  </div>
+  <div class="rating-divider"></div>
+  <div class="info-item">
+    <span class="info-label">Hours Today</span>
+    <span class="info-value"><span class="open-badge">Open</span> · Closes 6 PM</span>
+  </div>
+  <div class="rating-divider"></div>
+  <div class="info-item">
+    <span class="info-label">Phone</span>
+    <span class="info-value"><a href="tel:4089913358">(408) 991-3358</a></span>
+  </div>
+  <div class="rating-divider"></div>
+  <div class="info-item">
+    <span class="info-label">Address</span>
+    <span class="info-value">5736 W Grant Line Rd, Tracy, CA 95304</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section>
+  <div class="about reveal">
+    <div>
+      <p class="section-label">Who We Are</p>
+      <h2 class="section-title">A Cut Above<br>The Rest</h2>
+      <div class="about-body">
+        <p>Shiv Auto Service is Tracy's go-to independent repair shop, owned and operated by Nirmal — a highly knowledgeable technician who genuinely cares about getting your car fixed right at a fair price.</p>
+        <p>We believe in transparent communication, genuine OEM-quality parts, and never recommending work that isn't needed. From spark plugs to alternators, we handle it quickly, honestly, and affordably.</p>
+        <p>Big-name shops may charge big-name prices for average work. We fix what they miss — on time, and on budget.</p>
+      </div>
+      <div class="stat-row">
+        <div class="stat">
+          <div class="stat-num">4.8★</div>
+          <div class="stat-desc">Rating</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">68+</div>
+          <div class="stat-desc">Reviews</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">100%</div>
+          <div class="stat-desc">Genuine Parts</div>
+        </div>
+      </div>
+    </div>
+    <div class="about-visual">
+      <div class="about-card">
+        <div class="wrench-icon">🔧</div>
+        <p style="font-family:'Bebas Neue',sans-serif;font-size:1.8rem;letter-spacing:0.05em;text-align:center;opacity:0.6;">Expert Auto<br>Repair</p>
+        <div class="about-card-accent">Top<br>Rated</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section style="padding-top:0">
+  <div class="reveal">
+    <p class="section-label">Why Choose Us</p>
+    <h2 class="section-title">What Sets Us Apart</h2>
+  </div>
+  <div class="highlights-grid reveal">
+    <div class="highlight">
+      <div class="highlight-icon">💰</div>
+      <div class="highlight-title">Unbeatable Pricing</div>
+      <div class="highlight-desc">No one can beat his price and the quality of work. Fair estimates, no surprise charges.</div>
+    </div>
+    <div class="highlight">
+      <div class="highlight-icon">⚡</div>
+      <div class="highlight-title">Fast Turnaround</div>
+      <div class="highlight-desc">Need your car back same day? We prioritize urgent repairs and communicate every step.</div>
+    </div>
+    <div class="highlight">
+      <div class="highlight-icon">🔩</div>
+      <div class="highlight-title">Genuine Parts</div>
+      <div class="highlight-desc">We use only original and genuine spare parts — no cheap substitutes that cause more problems.</div>
+    </div>
+    <div class="highlight">
+      <div class="highlight-icon">🤝</div>
+      <div class="highlight-title">Honest Service</div>
+      <div class="highlight-desc">Only the work that's actually necessary. Your requests are heard and honored.</div>
+    </div>
+    <div class="highlight">
+      <div class="highlight-icon">🧠</div>
+      <div class="highlight-title">Expert Knowledge</div>
+      <div class="highlight-desc">Nirmal is knowledgeable and cuts above the rest — fixing problems that big brands create.</div>
+    </div>
+    <div class="highlight">
+      <div class="highlight-icon">😊</div>
+      <div class="highlight-title">Friendly Staff</div>
+      <div class="highlight-desc">Warm, professional service every visit. The owner is top notch and always happy to help.</div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section">
+  <div class="reveal">
+    <p class="section-label">Customer Reviews</p>
+    <h2 class="section-title">What People<br>Are Saying</h2>
+  </div>
+  <div class="reviews-grid reveal">
+
+    <div class="review-card">
+      <div class="review-quote">"</div>
+      <div class="review-stars">
+        <span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span>
+      </div>
+      <p class="review-text">I had a great experience with Shiv. Nirmal was a huge help in getting my problem fixed the cheapest and quickest way possible.</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar">BB</div>
+        <div>
+          <div class="reviewer-name">Brady Bartlett</div>
+          <div class="reviewer-meta">Local Guide · 2 months ago</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-quote">"</div>
+      <div class="review-stars">
+        <span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span>
+      </div>
+      <p class="review-text">Shiv auto center is owned by a very knowledgeable person who is cut above the rest and their charges are reasonable. They fix problems created by so-called big name brands in a jiffy.</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background:#d4a843;color:#000">AN</div>
+        <div>
+          <div class="reviewer-name">Alpana Nr Sharma</div>
+          <div class="reviewer-meta">Local Guide · 6 months ago</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card">
+      <div class="review-quote">"</div>
+      <div class="review-stars">
+        <span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span><span class="review-star">★</span>
+      </div>
+      <p class="review-text">Good place to get your car serviced. You can request that only the bare minimum mandatory tasks are done and your request is honored. Spark plugs and alternator replaced with genuine parts — and my car was prioritized when I needed it early.</p>
+      <div class="reviewer">
+        <div class="reviewer-avatar" style="background:#2a7a4f">JS</div>
+        <div>
+          <div class="reviewer-name">Jas Singh</div>
+          <div class="reviewer-meta">Local Guide · 1 year ago</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="margin-top:2.5rem;text-align:center" class="reveal">
+    <a href="https://search.google.com/local/reviews?placeid=ChIJ" target="_blank" class="btn btn-ghost">Read All 68 Reviews on Google</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section">
+  <div class="contact-inner">
+    <div>
+      <p class="section-label">Find Us</p>
+      <h2 class="section-title">Come See<br>Us Today</h2>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📍</div>
+        <div>
+          <div class="contact-detail-label">Address</div>
+          <div class="contact-detail-value">5736 W Grant Line Rd<br>Tracy, CA 95304</div>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">📞</div>
+        <div>
+          <div class="contact-detail-label">Phone</div>
+          <div class="contact-detail-value"><a href="tel:4089913358">(408) 991-3358</a></div>
+        </div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">🕐</div>
+        <div>
+          <div class="contact-detail-label">Hours</div>
+          <div class="contact-detail-value">Open · Closes 6 PM</div>
+        </div>
+      </div>
+      <a href="https://maps.google.com/?q=5736+W+Grant+Line+Rd+Tracy+CA+95304" target="_blank" class="btn" style="background:#fff;color:var(--red);margin-top:1rem">Get Directions →</a>
+    </div>
+    <div>
+      <div class="map-embed">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3155!2d-121.4732!3d37.7020!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDQyJzA3LjIiTiAxMjHCsDI4JzIzLjUiVw!5e0!3m2!1sen!2sus!4v1234567890"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Shiv <span>Auto</span> Service</div>
+  <div class="footer-copy">© 2024 Shiv Auto Service · 5736 W Grant Line Rd, Tracy, CA 95304</div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => observer.observe(r));
+</script>
+
+</body>
+</html>
